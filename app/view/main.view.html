@@ -1,0 +1,41 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-md-8 col-md-offset-2 text-center">
+      <h1 class="site-title">{{main.title}}</h1>
+    </div>
+  </div>
+
+  <div class="row form-wrapper">
+    <div class="col-xs-12 col-md-8 col-md-offset-2">
+      <form name="songsearch" id="songsearch" ng-submit="main.queryBySong(main.song_name, main.artist_name)">
+        <legend>Reference Song Search</legend>
+        <div class="row">
+          <div class="col-xs-12 col-sm-6">
+            <md-input-container class="md-block">
+              <label for="song_name">Song Name</label>
+              <input type="text" ng-model="main.song_name" name="song" required>
+            </md-input-container>
+          </div>
+          <div class="col-xs-12 col-sm-6">
+            <md-input-container class="md-block">
+              <label for="artist_name">Artist Name</label>
+              <input type="text" ng-model="main.artist_name" name="artist">
+            </md-input-container>
+          </div>
+        </div>
+        <md-button class="md-raised md-primary" ng-disabled="songsearch.$invalid" type="submit">Search</md-button>
+      </form>
+    </div>
+  </div>
+
+  <div class="row matched-songs">
+    <div class="col-xs-12 col-md-8 col-md-offset-2">
+      <md-list-item ng-repeat="i in main.matchedSongs">
+        <md-checkbox ng-model="i.selected"></md-checkbox>
+        <p>{{i.name}}</p>
+      </md-list-item>
+    </div>
+  </div>
+
+  
+</div>
