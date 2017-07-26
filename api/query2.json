@@ -3,30 +3,35 @@
 		"songID": "1234",
 		"songName": "All You Need Is Now",
 		"artistName": "Duran Duran",
-		"artistID": "198001"
+		"artistID": "198001",
+		"score": 0.876
 	},
 	{
 		"songID": "1333",
 		"songName": "Ordinary World",
 		"artistName": "Duran Duran",
-		"artistID": "198001"
+		"artistID": "198001",
+		"score": 0.789
 	},
 	{
 		"songID": "1233",
 		"songName": "Universe Alone",
 		"artistName": "Duran Duran",
-		"artistID": "198001"
+		"artistID": "198001",
+		"score": 0.678
 	},
 	{
 		"songID": "9999",
 		"songName": "What Are the Chances",
 		"artistName": "Duran Duran",
-		"artistID": "198001"
+		"artistID": "198001",
+		"score": 0.543
 	},
 	{
 		"songID": "5688",
 		"songName": "Come Undone",
 		"artistName": "Duran Duran",
-		"artistID": "198001"
+		"artistID": "198001",
+		"score": 0.432
 	}
 ]

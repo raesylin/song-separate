@@ -1,7 +1,12 @@
-@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700');
+@import url('https://fonts.googleapis.com/css?family=Roboto:100,300,400,700|Belgrano|IM+Fell+DW+Pica');
 
 body {
-	font-family: 'Source Sans Pro', sans-serif;
+	font-family: 'Roboto', sans-serif;
+}
+
+input {
+	font-family: 'Roboto', sans-serif;
+	letter-spacing: 0.05rem;
 }
 
 body {
@@ -11,18 +16,32 @@ body {
   background: -ms-linear-gradient(45deg, #085078 10%, #85d8ce 90%);
   background: -o-linear-gradient(45deg, #085078 10%, #85d8ce 90%);
   background: linear-gradient(45deg, #085078 10%, #85d8ce 90%);
- }
+}
+
+.site-wrapper {
+	padding-top: 20rem;
+}
 
 .site-title {
-	font-size: 4rem;
 	text-shadow: 1px 1px 3px rgba(130,130,130,0.5);
-	color: dimgrey;
+	color: gainsboro;
+	font-family: 'Belgrano', serif;
 	margin-bottom: 60px;
+	font-size: 3.0rem;
+	line-height: 1.3;
+	opacity: 0.7;
+	
+	strong {
+		font-family: 'IM Fell DW Pica', serif;
+		font-size: 10rem;
+		letter-spacing: 0.5rem;
+		color: lightgrey;
+	}
 }
 
 .form-wrapper {
 	> div {
-		background-color: rgba(248,248,248,0.7);
+		// background-color: rgba(0,0,0,0.15);
 		border-radius: 2px;
 	}
 }
@@ -33,7 +52,10 @@ body {
 	margin: 20px;
 
 	legend {
+
 		color: orange;
+		// border-bottom-color: rgba(183, 211, 224, 0.2);
+		border-bottom: 0;
 	}
 
 	.md-button {
@@ -53,15 +75,105 @@ body {
 
 md-input-container:not(.md-input-invalid).md-input-focused {
 	label {
-		color: #408d9f;
+		color: #7BC6D7;
 	}
 
 	.md-input {
-		border-color: #408d9f;
+		// border-color: #408d9f;
+		border-color: #7BC6D7;
 	}
 }
 
-.matched-songs > div {
+md-input-container {
+	 label {
+		color: rgba(255, 255, 255, 0.68);
+		font-weight: 400;
+	}
+
+	.md-input {
+		color: white;
+	}
+}
+
+.matched-songs {
 	margin-top: 30px;
 	font-size: 2rem;
+}
+
+.form-wrapper.focus {
+	> div {
+		background-color: rgba(0,0,0,0.15);
+	}
+}
+
+.form-wrapper > div {
+	background-color: rgba(0,0,0,0);
+	transition: 0.3s linear;
+}
+
+.form2 {
+	padding-top: 2rem;
+}
+
+#rcmsearch {
+	.md-button {
+		display: block;
+		margin: 5rem auto;
+	}
+}
+
+md-list-item {
+	opacity: 1;
+}
+
+md-list-item.ng-enter {
+	transition: 0.5s;
+	opacity: 0;
+}
+
+md-list-item.ng-enter-active {
+	opacity: 1;
+}
+
+.md-label {
+	color: linen;
+}
+
+md-radio-button {
+	margin-bottom: 0;
+	font-weight: 100;
+	font-size: 1.5rem;
+
+	.md-off {
+		border-color: rgba(255, 255, 255, 0.54);
+	}
+}
+
+.artist,
+.song {
+	font-size: 1.8rem;
+	font-weight: bolder;
+	border-bottom: 1px dotted linen;
+}
+
+.artist {
+	color: lightslategrey;
+	border-bottom-color: lightslategrey;
+}
+
+.configurations,
+.matched-songs {
+	h4 {
+		color: dimgrey;
+	}
+}
+
+md-slider.md-default-theme.md-min .md-thumb:after,
+md-slider.md-min .md-thumb:after {
+	background-color: #FF9800;
+	border-color: #FF9800;
+}
+
+md-slider-container md-input-container input[type=number] {
+	padding-left: 12px;
 }

@@ -1,41 +1,90 @@
-<div class="container">
+<div class="site-wrapper container-fluid">
   <div class="row">
-    <div class="col-xs-12 col-md-8 col-md-offset-2 text-center">
-      <h1 class="site-title">{{main.title}}</h1>
-    </div>
-  </div>
+    <div class="col-xs-12 col-md-2 col-md-offset-1">
+      <h1 class="site-title">Resistance is <br><strong>Futile</strong></h1>
+    </div><!-- /.col-xs-12 col-md-2 col-md-offset-1 -->
+    <div class="col-xs-12 col-md-9 main">
+      <div class="row">
+        <div class="col-xs-12 col-md-6 form1" ng-show="showForm1">
+          <div class="row form-wrapper" ng-class="{'focus': form1Focused}">
+            <div class="col-xs-12 col-md-10 col-md-offset-2">
+              <form name="songsearch" id="songsearch" ng-submit="main.queryBySong(main.song_name, main.artist_name)">
+                <legend>Reference Song Search</legend>
+                <div class="row">
+                  <div class="col-xs-12">
+                    <md-input-container class="md-block">
+                      <label for="song_name">Song Name</label>
+                      <input type="text" ng-model="main.song_name" name="song" required ng-focus="form1Focused = true;" ng-blur="form1Focused = false;">
+                    </md-input-container>
+                  </div>
+                  <div class="col-xs-12">
+                    <md-input-container class="md-block">
+                      <label for="artist_name">Artist Name</label>
+                      <input type="text" ng-model="main.artist_name" name="artist" ng-focus="form1Focused = true;" ng-blur="form1Focused = false;">
+                    </md-input-container>
+                  </div>
+                </div>
+                <md-button class="md-raised md-primary" ng-disabled="songsearch.$invalid" type="submit">Search</md-button>
+              </form>
+            </div><!-- /.col-xs-12 col-md-10 col-md-offset-2 -->
+          </div><!-- /.row -->  
+        </div><!-- /.col-xs-12 col-md-6 -->
+        <div class="col-xs-12 col-md-6 form2" ng-show="showForm2">
+          <form name="rcmsearch" id="rcmsearch" ng-submit="main.queryRecom(main.numRecs, main.frac, main.selectedSongID)">
+            <div class="row">
+              <div class="col-xs-12 col-md-10 col-md-offset-1 configurations">
+                <!-- sliders start -->
+                <h4><i class="fa fa-sliders" aria-hidden="true"></i> Param 1 (numRecs)</h4>
+                <md-slider-container>
+                  <md-slider flex ng-model="main.numRecs" step="1" min="0" max="100" aria-label="numRecs"></md-slider class="md-accent">
+                  <md-input-container>
+                    <input flex type="number" ng-model="main.numRecs" aria-label="numRecs" aria-controls="numRecs-slider">
+                  </md-input-container>
+                </md-slider-container>
+                <h4><i class="fa fa-sliders" aria-hidden="true"></i> Param 2 (frac)</h4>
+                <md-slider-container>
+                  <md-slider flex ng-model="main.frac" step="1" min="0" max="100" aria-label="frac"></md-slider class="md-accent">
+                  <md-input-container>
+                    <input flex type="number" ng-model="main.frac" aria-label="frac" aria-controls="frac-slider">
+                  </md-input-container>
+                </md-slider-container>
+                <!-- sliders end -->
+              </div><!-- /.col-xs-12 col-md-10 col-md-offset-1 -->
+            </div><!-- /.row -->
 
-  <div class="row form-wrapper">
-    <div class="col-xs-12 col-md-8 col-md-offset-2">
-      <form name="songsearch" id="songsearch" ng-submit="main.queryBySong(main.song_name, main.artist_name)">
-        <legend>Reference Song Search</legend>
-        <div class="row">
-          <div class="col-xs-12 col-sm-6">
-            <md-input-container class="md-block">
-              <label for="song_name">Song Name</label>
-              <input type="text" ng-model="main.song_name" name="song" required>
-            </md-input-container>
-          </div>
-          <div class="col-xs-12 col-sm-6">
-            <md-input-container class="md-block">
-              <label for="artist_name">Artist Name</label>
-              <input type="text" ng-model="main.artist_name" name="artist">
-            </md-input-container>
-          </div>
-        </div>
-        <md-button class="md-raised md-primary" ng-disabled="songsearch.$invalid" type="submit">Search</md-button>
-      </form>
+            <div class="row">
+              <div class="col-xs-12 col-md-10 col-md-offset-1 matched-songs">
+                <h4>Select matched song</h4>
+                <div>
+                  <md-radio-group ng-model="main.selectedSongID" required>
+                    <md-list-item ng-repeat="i in main.matchedSongs track by i.songID" md-ink-ripple="rgba(255,255,255,0.3)">
+                      <md-radio-button class="md-accent" ng-value="i.songID"><span class="song">{{i.songName}}</span> by <span class="artist">{{i.artistName}}</span></md-radio-button>
+                      <!-- <p>{{i.name}}</p> -->
+                    </md-list-item>
+                  </md-radio-group>    
+                </div><!-- /.matched-songs -->
+                  
+              </div><!-- /.col-xs-12 col-md-10 col-md-offset-2 -->
+            </div><!-- /.row -->
+            <md-button class="md-raised md-primary" ng-disabled="rcmsearch.$invalid" type="submit">Get Recommendations</md-button>
+          </form><!-- /#rcmsearch -->
+          
+        </div><!-- /.col-xs-12 col-md-6 -->
+        <div class="col-xs-12 col-md-6 results" ng-show="!showForm1">
+          <h3>You'll probably like... </h3>
+          <md-list ng-cloak>
+            <md-list-item class="md-2-line" ng-repeat="i in main.recomdSongs">
+              <div class="md-avatar">
+                <h3>{{i.score | number: 3}}</h3>
+              </div><!-- /.md-avatar -->
+              <div class="md-list-item-text">
+                <h3>{{i.songName}}</h3>
+                <p>by {{i.artistName}}</p>
+              </div><!-- /.md-list-item-text -->
+            </md-list-item>
+          </md-list>
+        </div><!-- /.col-xs-12 col-md-6 results -->
+      </div><!-- /.row -->
     </div>
-  </div>
-
-  <div class="row matched-songs">
-    <div class="col-xs-12 col-md-8 col-md-offset-2">
-      <md-list-item ng-repeat="i in main.matchedSongs">
-        <md-checkbox ng-model="i.selected"></md-checkbox>
-        <p>{{i.name}}</p>
-      </md-list-item>
-    </div>
-  </div>
-
-  
-</div>
+  </div><!-- /.row -->
+</div><!-- /.site-wrapper -->
