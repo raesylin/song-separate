@@ -5,9 +5,9 @@
 		.module('app')
 		.config(appRoutes);
 
-	appRoutes.$inject = ['$routeProvider'];
+	appRoutes.$inject = ['$routeProvider', '$locationProvider'];
 
-	function appRoutes($routeProvider) {
+	function appRoutes($routeProvider, $locationProvider) {
 		
 		$routeProvider
 			.when('/', {
@@ -18,5 +18,6 @@
 			.otherwise({
 				redirectTo: '/'
 			});
+
 	}
 })();
