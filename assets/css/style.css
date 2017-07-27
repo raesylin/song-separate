@@ -654,4 +654,32 @@ md-list-item .md-avatar {
   width: 60px;
   height: 60px; }
 
+.results {
+  margin-top: 3rem; }
+  .results > h3 {
+    color: gainsboro; }
+  .results .md-avatar {
+    display: flex;
+    align-items: center;
+    color: lightskyblue; }
+    .results .md-avatar h3 {
+      margin: 0; }
+    .results .md-avatar.tier1 {
+      color: white; }
+      .results .md-avatar.tier1 + .md-list-item-text h3 {
+        color: #e9f6fe; }
+    .results .md-avatar.tier2 {
+      color: #e9f6fe; }
+      .results .md-avatar.tier2 + .md-list-item-text h3 {
+        color: #b8e2fc; }
+    .results .md-avatar.tier3 {
+      color: #b8e2fc; }
+      .results .md-avatar.tier3 + .md-list-item-text h3 {
+        color: lightskyblue; }
+  .results md-list-item.md-2-line .md-list-item-text h3 {
+    font-size: 1.8rem; }
+  .results md-list-item.md-2-line .md-list-item-text p {
+    font-size: 1.6rem;
+    color: lightskyblue; }
+
 /*# sourceMappingURL=maps/style.css.map */

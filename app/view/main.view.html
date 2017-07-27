@@ -74,7 +74,7 @@
           <h3>You'll probably like... </h3>
           <md-list ng-cloak>
             <md-list-item class="md-2-line" ng-repeat="i in main.recomdSongs">
-              <div class="md-avatar">
+              <div class="md-avatar" ng-class="{'tier1': i.score >= 0.8, 'tier2': i.score >= 0.6 && i.score < 0.8, 'tier3': i.score >= 0.4 && i.score < 0.6}">
                 <h3>{{i.score | number: 3}}</h3>
               </div><!-- /.md-avatar -->
               <div class="md-list-item-text">
@@ -83,6 +83,7 @@
               </div><!-- /.md-list-item-text -->
             </md-list-item>
           </md-list>
+          <md-button class="md-accent" ng-href="/">Search again</md-button>
         </div><!-- /.col-xs-12 col-md-6 results -->
       </div><!-- /.row -->
     </div>

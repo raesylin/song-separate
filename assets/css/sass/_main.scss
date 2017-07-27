@@ -1,3 +1,6 @@
+$recSongScoreColor: lightskyblue;
+$recSongTitlteColor: darken($recSongScoreColor, 10%);
+
 @import url('https://fonts.googleapis.com/css?family=Roboto:100,300,400,700|Belgrano|IM+Fell+DW+Pica');
 
 body {
@@ -181,4 +184,53 @@ md-slider-container md-input-container input[type=number] {
 md-list-item .md-avatar {
 	width: 60px;
 	height: 60px;
+}
+
+.results {
+	margin-top: 3rem;
+
+	> h3 {
+		color: gainsboro;
+	}
+
+	.md-avatar {
+		display: flex;
+		align-items: center;
+		color: $recSongScoreColor;
+
+		h3 {
+			margin: 0;
+		}
+
+		&.tier1 {
+			color: lighten($recSongScoreColor, 30%);
+			& + .md-list-item-text h3 {
+				color: lighten($recSongTitlteColor, 30%);
+			}
+		}
+		&.tier2 {
+			color: lighten($recSongScoreColor, 20%);
+			& + .md-list-item-text h3 {
+				color: lighten($recSongTitlteColor, 20%);
+			}
+		}
+		&.tier3 {
+			color: lighten($recSongScoreColor, 10%);
+			& + .md-list-item-text h3 {
+				color: lighten($recSongTitlteColor, 10%);
+			}
+		}
+
+	}
+
+	md-list-item.md-2-line .md-list-item-text {
+		h3 {
+			font-size: 1.8rem;
+		}	
+		p {
+			font-size: 1.6rem;
+			color: $recSongScoreColor;
+		}
+	}
+	
 }
