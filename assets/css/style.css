@@ -605,8 +605,7 @@ md-input-container .md-input {
   padding-top: 2rem; }
 
 #rcmsearch .md-button {
-  display: block;
-  margin: 5rem auto; }
+  margin: 5rem 2rem; }
 
 md-list-item {
   opacity: 1; }
@@ -630,13 +629,13 @@ md-radio-button {
 
 .artist,
 .song {
-  font-size: 1.8rem;
+  font-size: 1.5rem;
   font-weight: bolder;
   border-bottom: 1px dotted linen; }
 
 .artist {
-  color: lightslategrey;
-  border-bottom-color: lightslategrey; }
+  color: #dfe8ae;
+  border-bottom-color: #dfe8ae; }
 
 .configurations h4,
 .matched-songs h4 {
@@ -705,5 +704,12 @@ md-slider-container > :last-child:not(md-slider) {
   margin-bottom: 18px;
   color: #616161;
   font-size: 1.4rem; }
+
+.form2Buttons {
+  display: flex;
+  justify-content: center; }
+
+md-slider-container {
+  width: 350px; }
 
 /*# sourceMappingURL=maps/style.css.map */

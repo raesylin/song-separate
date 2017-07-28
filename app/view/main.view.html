@@ -68,7 +68,13 @@
                   
               </div><!-- /.col-xs-12 col-md-10 col-md-offset-2 -->
             </div><!-- /.row -->
-            <md-button class="md-raised md-primary" ng-disabled="rcmsearch.$invalid" type="submit">Get Recommendations</md-button>
+            <div class="row">
+              <div class="col-xs-12 form2Buttons">
+                <md-button class="md-raised md-primary" ng-disabled="rcmsearch.$invalid" type="submit" ng-class="{'two-buttons': !showForm1}">Get Recommendations</md-button>
+                <md-button class="md-accent md-raised" ng-href="#!/back" ng-if="!showForm1" ng-class="{'two-buttons': !showForm1}">Search again</md-button>    
+              </div><!-- /.col-xs-12 -->
+            </div><!-- /.row -->
+            
           </form><!-- /#rcmsearch -->
           
         </div><!-- /.col-xs-12 col-md-6 -->
@@ -85,7 +91,7 @@
               </div><!-- /.md-list-item-text -->
             </md-list-item>
           </md-list>
-          <md-button class="md-accent" ng-href="#!/back">Search again</md-button>
+          
         </div><!-- /.col-xs-12 col-md-6 results -->
       </div><!-- /.row -->
     </div>

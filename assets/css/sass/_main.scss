@@ -121,8 +121,10 @@ md-input-container {
 
 #rcmsearch {
 	.md-button {
-		display: block;
-		margin: 5rem auto;
+		// display: block;
+		margin: 5rem 2rem;
+
+
 	}
 }
 
@@ -155,14 +157,14 @@ md-radio-button {
 
 .artist,
 .song {
-	font-size: 1.8rem;
+	font-size: 1.5rem;
 	font-weight: bolder;
 	border-bottom: 1px dotted linen;
 }
 
 .artist {
-	color: lightslategrey;
-	border-bottom-color: lightslategrey;
+	color: #dfe8ae;;
+	border-bottom-color: #dfe8ae;;
 }
 
 .configurations,
@@ -264,3 +266,13 @@ md-slider-container>:last-child:not(md-slider) {
 	color: #616161;
 	font-size: 1.4rem;
 }
+
+.form2Buttons {
+	display: flex;
+	justify-content: center;
+}
+
+md-slider-container {
+	width: 350px;
+}
+
