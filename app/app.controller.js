@@ -48,7 +48,6 @@
 			for (var i = 0; i < vm.matchedSongs.length; i++) {
 
 				if (vm.matchedSongs[i].songID === songID) {
-					console.log('here');
 					selectedArtistID = vm.matchedSongs[i].artistID;
 					break;
 				}

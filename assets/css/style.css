@@ -535,12 +535,12 @@ input {
   letter-spacing: 0.05rem; }
 
 body {
-  overflow: visible !important;
-  background: -webkit-linear-gradient(45deg, #085078 10%, #85d8ce 90%);
-  background: -moz-linear-gradient(45deg, #085078 10%, #85d8ce 90%);
-  background: -ms-linear-gradient(45deg, #085078 10%, #85d8ce 90%);
-  background: -o-linear-gradient(45deg, #085078 10%, #85d8ce 90%);
-  background: linear-gradient(45deg, #085078 10%, #85d8ce 90%); }
+  background-image: -webkit-linear-gradient(45deg, #085078 10%, #85d8ce 90%);
+  background-image: -moz-linear-gradient(45deg, #085078 10%, #85d8ce 90%);
+  background-image: -ms-linear-gradient(45deg, #085078 10%, #85d8ce 90%);
+  background-image: -o-linear-gradient(45deg, #085078 10%, #85d8ce 90%);
+  background-image: linear-gradient(45deg, #085078 10%, #85d8ce 90%);
+  background-attachment: fixed; }
 
 .site-wrapper {
   padding-top: 20rem; }
@@ -681,5 +681,29 @@ md-list-item .md-avatar {
   .results md-list-item.md-2-line .md-list-item-text p {
     font-size: 1.6rem;
     color: lightskyblue; }
+
+.frac-input,
+.numRecs-input {
+  width: 70px !important;
+  padding-right: 20px !important;
+  text-align: right !important; }
+
+.frac-input ~ span {
+  display: inline-block;
+  margin-left: -20px !important;
+  line-height: 26px !important;
+  height: 50px;
+  margin-bottom: 30px;
+  color: gainsboro; }
+
+md-slider-container md-input-container input[type=number] {
+  color: #616161;
+  border-bottom-style: dotted; }
+
+md-slider-container > :last-child:not(md-slider) {
+  margin-left: -20px;
+  margin-bottom: 18px;
+  color: #616161;
+  font-size: 1.4rem; }
 
 /*# sourceMappingURL=maps/style.css.map */

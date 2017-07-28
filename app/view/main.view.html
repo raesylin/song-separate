@@ -38,15 +38,17 @@
                 <md-slider-container>
                   <md-slider flex ng-model="main.numRecs" step="1" min="0" max="100" aria-label="numRecs"></md-slider class="md-accent">
                   <md-input-container>
-                    <input flex type="number" ng-model="main.numRecs" aria-label="numRecs" aria-controls="numRecs-slider">
+                    <input class="numRecs-input" flex type="number" ng-model="main.numRecs" aria-label="numRecs" aria-controls="numRecs-slider">
                   </md-input-container>
+                  <span></span>
                 </md-slider-container>
                 <h4><i class="fa fa-sliders" aria-hidden="true"></i> Param 2 (frac)</h4>
                 <md-slider-container>
                   <md-slider flex ng-model="main.frac" step="1" min="0" max="100" aria-label="frac"></md-slider class="md-accent">
                   <md-input-container>
-                    <input flex type="number" ng-model="main.frac" aria-label="frac" aria-controls="frac-slider">
+                    <input class="frac-input" flex type="number" ng-model="main.frac" aria-label="frac" aria-controls="frac-slider">
                   </md-input-container>
+                  <span class="frac-placer">%</span>
                 </md-slider-container>
                 <!-- sliders end -->
               </div><!-- /.col-xs-12 col-md-10 col-md-offset-1 -->
