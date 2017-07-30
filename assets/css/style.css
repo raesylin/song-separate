@@ -676,9 +676,9 @@ md-list-item .md-avatar {
       .results .md-avatar.tier3 + .md-list-item-text h3 {
         color: lightskyblue; }
   .results md-list-item.md-2-line .md-list-item-text h3 {
-    font-size: 1.8rem; }
+    font-size: 1.4rem; }
   .results md-list-item.md-2-line .md-list-item-text p {
-    font-size: 1.6rem;
+    font-size: 1.2rem;
     color: lightskyblue; }
 
 .frac-input,
@@ -710,6 +710,6 @@ md-slider-container > :last-child:not(md-slider) {
   justify-content: center; }
 
 md-slider-container {
-  width: 350px; }
+  width: 300px; }
 
 /*# sourceMappingURL=maps/style.css.map */
